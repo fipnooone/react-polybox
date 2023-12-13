@@ -4,7 +4,7 @@ import { forwardRef } from 'react-generic-functions';
 import { BoxProps } from './Polybox.types';
 
 const Polybox = forwardRef(
-    <T extends React.ElementType, E extends HTMLElement = HTMLDivElement>(
+    <T extends React.ElementType = 'div', E extends HTMLElement = HTMLDivElement>(
         { as, ...restProps }: BoxProps<T>,
         ref: ForwardedRef<E>,
     ) => {
