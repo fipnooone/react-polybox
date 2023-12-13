@@ -42,7 +42,8 @@
     "typescript": "^5.3.3"
   },
   "peerDependencies": {
-    "react": ">=16"
+    "react": ">=18.2.0",
+    "@types/react": ">=18.2.45"
   },
   "scripts": {
     "build": "tsc",
