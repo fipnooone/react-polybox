@@ -1,0 +1,53 @@
+{
+  "name": "react-polybox",
+  "version": "0.9.0",
+  "description": "React polymorphic component",
+  "keywords": [
+    "react",
+    "polymorphism",
+    "polymorphic",
+    "typescript",
+    "component"
+  ],
+  "author": "fipnooone",
+  "license": "MIT",
+  "homepage": "https://github.com/fipnooone/react-polybox",
+  "bugs": {
+    "url": "https://github.com/fipnooone/react-polybox/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github:fipnooone/react-polybox"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "dependencies": {
+    "react-generic-functions": "^1.0.5"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.45",
+    "@typescript-eslint/eslint-plugin": "^6.14.0",
+    "@typescript-eslint/parser": "^6.14.0",
+    "bun-types": "latest",
+    "eslint": "^8.55.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-import": "^2.29.0",
+    "eslint-plugin-prettier": "^5.0.1",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-simple-import-sort": "^10.0.0",
+    "prettier": "^3.1.1",
+    "react": "^18.2.0",
+    "typescript": "^5.3.3"
+  },
+  "peerDependencies": {
+    "react": ">=16"
+  },
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write .",
+    "lint": "eslint \"src/**/*.{ts,tsx,js}\"",
+    "type-check": "tsc --noEmit"
+  }
+}
