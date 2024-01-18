@@ -19,9 +19,17 @@
     "type": "git",
     "url": "github:fipnooone/react-polybox"
   },
-  "main": "./dist/index.js",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./build/types/index.d.ts",
+      "require": "./build/cjs/index.js",
+      "import": "./build/esm/index.js",
+      "default": "./build/esm/index.js"
+    }
+  },
   "dependencies": {
     "react-generic-functions": "^1.0.5"
   },
@@ -46,7 +54,9 @@
     "@types/react": ">=18.2.45"
   },
   "scripts": {
-    "build": "tsc",
+    "build:clean": "rimraf dist",
+    "build:compile": "tsc -b ./tsconfig.cjs.json ./tsconfig.esm.json ./tsconfig.types.json",
+    "build": "bun run build:clean && bun run build:compile",
     "format": "prettier --write .",
     "lint": "eslint \"src/**/*.{ts,tsx,js}\"",
     "type-check": "tsc --noEmit"
