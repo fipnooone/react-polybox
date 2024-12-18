@@ -3,7 +3,7 @@ import React from 'react';
 type PropsOf<
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     E extends React.ElementType,
-> = JSX.LibraryManagedAttributes<E, React.ComponentPropsWithRef<E>>;
+> = React.JSX.LibraryManagedAttributes<E, React.ComponentPropsWithRef<E>>;
 
 export interface BoxOwnProps<E extends React.ElementType = 'div'> {
     as?: E;
