@@ -1,17 +1,11 @@
-import React, { ForwardedRef } from 'react';
-import { forwardRef } from 'react-generic-functions';
+import React from 'react';
 
 import { BoxProps } from './Polybox.types';
 
-const Polybox = forwardRef(
-    <T extends React.ElementType = 'div', E extends HTMLElement = HTMLDivElement>(
-        { as, ...restProps }: BoxProps<T>,
-        ref: ForwardedRef<E>,
-    ) => {
-        const Element = (as || 'div') as React.ElementType;
+const Polybox = <T extends React.ElementType = 'div'>({ as, ...props }: BoxProps<T>) => {
+    const Element = (as || 'div') as React.ElementType;
 
-        return <Element ref={ref} {...restProps} />;
-    },
-);
+    return <Element {...props} as={props.as} />;
+};
 
 export default Polybox;

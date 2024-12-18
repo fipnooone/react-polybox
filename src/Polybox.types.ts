@@ -5,10 +5,10 @@ type PropsOf<
     E extends React.ElementType,
 > = React.JSX.LibraryManagedAttributes<E, React.ComponentPropsWithRef<E>>;
 
-export interface BoxOwnProps<E extends React.ElementType = 'div'> {
-    as?: E;
+export interface BoxOwnProps<T extends React.ElementType> {
+    as?: T;
 }
 
-export type BoxProps<E extends React.ElementType> = BoxOwnProps<E> & Omit<PropsOf<E>, keyof BoxOwnProps>;
-
-export type PolymorphicComponentProps<E extends React.ElementType, P> = P & Omit<BoxProps<E>, keyof P>;
+export type BoxProps<T extends React.ElementType> = BoxOwnProps<T> & Omit<PropsOf<T>, keyof BoxOwnProps<T>>;
+// eslint-disable-next-line @typescript-eslint/ban-types
+export type PolymorphicComponentProps<T extends React.ElementType, P = {}> = P & Omit<BoxProps<T>, keyof P>;
